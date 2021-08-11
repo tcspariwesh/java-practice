@@ -1,8 +1,13 @@
 package com.tcs.exceptionsdemo;
 
 public class ExceptionsDemo {
-	public static void main(String[] args) throws MyCheckedException {
-		demo2();
+	public static void main(String[] args) {
+		try {
+			demo2();
+		} catch (MyCheckedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		//		demo1();
 	}
 
