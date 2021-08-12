@@ -30,7 +30,6 @@ public class ArraylistDemo {		//order of insertion
 					return sum + number;
 				});
 		System.out.println(sum1.get());
-
 	}
 
 	/**
