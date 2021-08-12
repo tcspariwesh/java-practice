@@ -3,13 +3,34 @@ package com.tcs.listdemo;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class ArraylistDemo {
 	public static void main(String[] args) {
 		List<Integer> numbers = createList();
 //		sortList(numbers);
-		filterList(numbers);
+//		filterList(numbers);
+//		add(numbers);
+		otherOps(numbers);
+	}
+
+	private static void otherOps(List<Integer> numbers) {
+		System.out.println(numbers);
+//		numbers.remove(11);
+//		numbers.add(50);//adds at the end
+		numbers.add(1,50); //adds at a specific index
+		System.out.println(numbers);
+	}
+
+	private static void add(List<Integer> numbers) {
+		Optional<Integer> sum1 = numbers.stream()
+				.reduce((Integer sum, Integer number) -> {
+					System.out.println(sum+", "+number);
+					return sum + number;
+				});
+		System.out.println(sum1.get());
+
 	}
 
 	/**
@@ -22,8 +43,7 @@ public class ArraylistDemo {
 			System.out.println(number % 2 == 0);
 //			break;
 		});
-		List<Integer> filtered = numbers.stream()
-				.filter((number) -> number % 2 == 0) //lambda
+		List<Integer> filtered = numbers.stream().filter((number) -> number % 2 == 0) // lambda
 				.collect(Collectors.toList());
 		System.out.println(filtered);
 	}
