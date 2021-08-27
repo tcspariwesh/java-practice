@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-public class ArraylistDemo {		//order of insertion
+public class ArraylistDemo { // order of insertion
 	public static void main(String[] args) {
 		List<Integer> numbers = createList();
 //		sortList(numbers);
@@ -19,17 +19,17 @@ public class ArraylistDemo {		//order of insertion
 		System.out.println(numbers);
 //		numbers.remove(11);
 //		numbers.add(50);//adds at the end
-		numbers.add(1,50); //adds at a specific index
+		numbers.add(1, 50); // adds at a specific index
 		System.out.println(numbers);
 	}
 
 	private static void add(List<Integer> numbers) {
-		Optional<Integer> sum1 = numbers.stream()
-				.reduce((Integer sum, Integer number) -> {
-					System.out.println(sum+", "+number);
-					return sum + number;
-				});
-		System.out.println(sum1.get());
+		Optional<Integer> sum1 = numbers.stream().reduce((Integer sum, Integer number) -> {
+			System.out.println(sum + ", " + number);
+			return sum + number;
+		});
+		if (sum1.isPresent())
+			System.out.println(sum1.get());
 	}
 
 	/**
